@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang=fr> 
+
+
+<head>
+
+    <title>Béliar</title>
+	<link rel="stylesheet" href="style.css" />
+
+</head>
+    
+
+<body>
+
+	<a href="index.html">        <!-- logo -->
+        <center> <img src="image/Béliar.png"  style="width: 20%"> </center>
+    </a>
+
+<hr>
+
+    <center>        <!-- Setup, Musique, Réseaux, Staff, Jeux -->
+	    <a href="Setup.html"><h1 style="display:inline-block;">Setup</h1></a>
+	    <a href="Musique.html"><h1 style="display:inline-block;">Musique</h1></a>
+	    <a href="Reseaux.html"> <h1 style="display:inline-block;">Réseaux</h1></a>
+	    <a href="Staff.html"> <h1 style="display:inline-block;">Staff</h1></a>
+    </center>
+
+<hr>
+
+    <p style="margin-right: 50px;" style="margin-left: 50px;">
+	    Bienvenue sur mon site en développement que je réalise avec Visual Studio Code et non avec Wix. Hé ouai ! C'est pas un site de péquenaud !
+	    Je suis un youtubeur, influenceur, créateur, réalisateur de vidéograms sur le World Wide Web, alias Internet.
+	    Plus présisément sur youtube pour un unique but : L'argent. Vous rétrouverez une séléction de tuto ci-dessous et tout un tas de truc au dessus.
+    </p>
+
+<hr>
+
+	 		<center><h2>	Sélection de vidéos de la chaine :	</h2></center>
+	 <center>
+		<a href="https://www.youtube.com/watch?v=bhaQ8D6qX1g&t=27s">
+		<img src="image/Crack vegas pro0000.jpg" style="width: 30%;"      style="display:inline-block;">
+		</a>
+
+		<a href="https://www.youtube.com/watch?v=mPFZWd8PCvM&t=1s" >
+		<img src="image/crack minecraft0000.jpg" style="width: 30%;"     style="display:inline-block;">
+		</a>
+	</center>
+	<center>
+		<a href="https://www.youtube.com/watch?v=pDY3jiW5sgw&t=3s">
+		<img src="image/tuto discord.jpg" style="width: 30%;"      style="display:inline-block;">
+		</a>
+
+		<a href="https://www.youtube.com/watch?v=eSIJ19tT61Y&t=475s">
+		<img src="image/WOT Noob0000.jpg" style="width: 30%;"      style="display:inline-block;">
+		</a>
+	</center>
+	<center>
+		<a href="https://youtu.be/44hSyWHDco0">
+		<img src="image/CRACK PSP.jpg" style="width: 30%;"      style="display:inline-block;">
+		</a>
+
+		<a href="https://www.youtube.com/watch?v=rdWAy57cBm8&t=18s">
+		<img src="image/pcbuilding.jpg" style="width: 30%;"      style="display:inline-block;">
+		</a>
+	</center>
+		
+<hr>
+
+	<center><h2>en développement :</h2></center>
+
+
+	<script type="text/javascript"> // code java
+
+	const items = document.querySelectorAll('img');
+const nbSlide = items.length;
+const suivant = document.querySelector('.right');
+const precedent = document.querySelector('.left');
+let count = 0;
+
+function slideSuivante(){
+    items[count].classList.remove('active');
+
+    if(count < nbSlide - 1){
+        count++;
+    } else {
+        count = 0;
+    }
+
+    items[count].classList.add('active')
+    console.log(count);
+    
+}
+suivant.addEventListener('click', slideSuivante)
+
+
+function slidePrecedente(){
+    items[count].classList.remove('active');
+
+    if(count > 0){
+        count--;
+    } else {
+        count = nbSlide - 1;
+    }
+
+    items[count].classList.add('active')
+    // console.log(count);
+    
+}
+precedent.addEventListener('click', slidePrecedente)
+
+function keyPress(e){
+    console.log(e);
+    
+    if(e.keyCode === 37){
+        slidePrecedente();
+    } else if(e.keyCode === 39){
+        slideSuivante();
+    }
+}
+document.addEventListener('keydown', keyPress)
+	</script>
+
+	<div class="container">
+
+    <div class="slider">
+      <img class="active" src="image/crack minecraft0000.jpg">
+      <img src="image/CRACK PSP.jpg">
+      <img src="image/tuto discord.jpg">
+    </div>
+
+    <div class="cont-btn">
+      <div class="btn-nav left">←</div>
+      <div class="btn-nav right">→</div>
+    </div>
+
+  	</div>
+
+
+</body>
