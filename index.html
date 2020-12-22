@@ -35,105 +35,85 @@
 
 <hr>
 
-	 		<center><h2>	Sélection de vidéos de la chaine :	</h2></center>
-	 <center>
-		<a href="https://www.youtube.com/watch?v=bhaQ8D6qX1g&t=27s">
-		<img src="image/Crack vegas pro0000.jpg" style="width: 30%;"      style="display:inline-block;">
-		</a>
-
-		<a href="https://www.youtube.com/watch?v=mPFZWd8PCvM&t=1s" >
-		<img src="image/crack minecraft0000.jpg" style="width: 30%;"     style="display:inline-block;">
-		</a>
-	</center>
-	<center>
-		<a href="https://www.youtube.com/watch?v=pDY3jiW5sgw&t=3s">
-		<img src="image/tuto discord.jpg" style="width: 30%;"      style="display:inline-block;">
-		</a>
-
-		<a href="https://www.youtube.com/watch?v=eSIJ19tT61Y&t=475s">
-		<img src="image/WOT Noob0000.jpg" style="width: 30%;"      style="display:inline-block;">
-		</a>
-	</center>
-	<center>
-		<a href="https://youtu.be/44hSyWHDco0">
-		<img src="image/CRACK PSP.jpg" style="width: 30%;"      style="display:inline-block;">
-		</a>
-
-		<a href="https://www.youtube.com/watch?v=rdWAy57cBm8&t=18s">
-		<img src="image/pcbuilding.jpg" style="width: 30%;"      style="display:inline-block;">
-		</a>
-	</center>
-		
-<hr>
-
-	<center><h2>en développement :</h2></center>
-
+	<center><h2>	Sélection de vidéos de la chaine :	</h2></center>
 
 	<script type="text/javascript"> // code java
+			var slideIndex = 1;
+		showSlides(slideIndex);
 
-	const items = document.querySelectorAll('img');
-const nbSlide = items.length;
-const suivant = document.querySelector('.right');
-const precedent = document.querySelector('.left');
-let count = 0;
+		// Next/previous controls
+		function plusSlides(n) {
+		showSlides(slideIndex += n);
+		}
 
-function slideSuivante(){
-    items[count].classList.remove('active');
+		// Thumbnail image controls
+		function currentSlide(n) {
+		showSlides(slideIndex = n);
+		}
 
-    if(count < nbSlide - 1){
-        count++;
-    } else {
-        count = 0;
-    }
-
-    items[count].classList.add('active')
-    console.log(count);
-    
-}
-suivant.addEventListener('click', slideSuivante)
-
-
-function slidePrecedente(){
-    items[count].classList.remove('active');
-
-    if(count > 0){
-        count--;
-    } else {
-        count = nbSlide - 1;
-    }
-
-    items[count].classList.add('active')
-    // console.log(count);
-    
-}
-precedent.addEventListener('click', slidePrecedente)
-
-function keyPress(e){
-    console.log(e);
-    
-    if(e.keyCode === 37){
-        slidePrecedente();
-    } else if(e.keyCode === 39){
-        slideSuivante();
-    }
-}
-document.addEventListener('keydown', keyPress)
+		function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}
+		if (n < 1) {slideIndex = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";
+		dots[slideIndex-1].className += " active";
+		}
 	</script>
 
-	<div class="container">
+<!-- Slider d'images -->
+	<div class="slideshow-container">
 
-    <div class="slider">
-      <img class="active" src="image/crack minecraft0000.jpg">
-      <img src="image/CRACK PSP.jpg">
-      <img src="image/tuto discord.jpg">
-    </div>
+		<!-- Images -->
+		<div class="mySlides fade">
+		<a href="https://www.youtube.com/watch?v=mPFZWd8PCvM">	<!--CRACK MINECRAFT-->
+		<img src="image/crack minecraft0000.jpg" style="width:100%">
+		</a>
+		<div class="text">1 / 5</div>
+		</div>
+		
+		<div class="mySlides fade">
+		<a href="https://www.youtube.com/watch?v=44hSyWHDco0&t=75s">	<!--CRACK PSP-->
+		<img src="image/CRACK PSP.jpg" style="width:100%">
+		</a>
+		<div class="text">2 / 5</div>
+		</div>
+		
+		<div class="mySlides fade">
+		<a href="https://www.youtube.com/watch?v=bhaQ8D6qX1g&t=27s">	<!--CRACK VEGAS PRO-->
+		<img src="image/Crack vegas pro0000.jpg" style="width:100%">
+		</a>
+		<div class="text">3 / 5</div>
+		</div>
 
-    <div class="cont-btn">
-      <div class="btn-nav left">←</div>
-      <div class="btn-nav right">→</div>
-    </div>
+		<div class="mySlides fade">
+		<a href="https://www.youtube.com/watch?v=pDY3jiW5sgw&t=9s">	<!--TUTO DISCORD-->
+		<img src="image/tuto discord.jpg" style="width:100%">
+		</a>
+		<div class="text">4 / 5</div>
+		</div>
 
-  	</div>
+		<div class="mySlides fade">
+		<a href="https://www.youtube.com/watch?v=eSIJ19tT61Y&t=6s">	<!--WOT-->
+		<img src="image/WOT Noob0000.jpg" style="width:100%">
+		</a>	
+		<div class="text">5 / 5</div>
+		</div>
+		
+		<!-- Boutons : -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
+	</div>
+
+
+	
 
 </body>
