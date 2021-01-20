@@ -13,6 +13,10 @@ h1, h2, h3
     text-decoration:none;
 }
 
+a
+{
+    text-decoration:none;
+}
 
 p
 {
@@ -28,7 +32,7 @@ p
 
 div
 {
-  display:inline-block ;
-  margin: 3;
-  
+    display:inline-block ;
+    margin: 3;
+
 }
